@@ -1,0 +1,44 @@
+{{ 'skincare-result.css' | asset_url | stylesheet_tag }}
+
+<section class="skincare-result-section">
+    <div class="skincare-result-container">
+        <div class="skincare-result-content">           
+            <h1 class="skincare-result-title">{{ section.settings.title | upcase }}</h1>
+            <p>
+                A simple skincare routine is essential to reduce and prevent fine lines, wrinkles, dry skin, and dark splotches that start to appear on your face as you age.
+            </p>
+            <p>
+                If you dont feel better and see results in 30 days, you can keep the product and we'll send you full refund.
+            </p>
+        </div>
+        <div class="skincare-result-wrapper">
+            <img src="{{ 'result1.jpg' | asset_url }}" width="100" height="100" alt="Skincare Result" class="stacked-image">
+            <div class="skincare-result-paragraph">
+                <p>
+                    "The one minute routine that will save your face"
+                </p>
+            </div>
+        </div>
+        <div class="skincare-result-wrapper-slider">
+            <ul class="skincare-result-check-list">
+                    <li>All-natural ingredients</li>
+                    <li>Formulated by Doctors & PHDS </li>
+                    <li>100 % Free-Risk Returns</li>
+                    <li>No Prescription Required</li>              
+                </ul>
+        </div>
+    </div>
+</section>
+
+
+{%  schema  %}  
+{
+  "name": "Skincare Result",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Heading", "default": "Results you can see" }    
+  ],
+  "presets": [
+    { "name": "Skincare Result" }
+  ]
+}
+{% endschema %}

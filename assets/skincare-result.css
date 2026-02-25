@@ -1,0 +1,100 @@
+/* base / desktop styles -------------------------------------------------- */
+
+.skincare-result-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skincare-result-content p {
+    color: rgba(46, 48, 46, 1);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 35px;
+    padding-bottom: 25px;
+}
+
+.skincare-result-content h1 {
+    color: rgba(46, 48, 46, 1);
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.skincare-result-paragraph {
+    position: relative;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -3px;          /* “signature compressed” look */
+    line-height: 0.9;
+    box-sizing: border-box;        /* safe for both viewport sizes */
+}
+
+.skincare-result-paragraph > p {
+    position: absolute;
+    bottom: 519px;
+    right: 159px;
+    z-index: 1;
+    width: 592px;
+    height: 156px;
+    color: rgba(239, 247, 250, 1);
+    font-family: Inter-Black;
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.83px;
+}
+
+.skincare-result-check-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.skincare-result-check-list li {
+    align-items: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--skincare-dark);
+    text-transform: uppercase;
+}
+
+.skincare-result-check-list li::before {
+    content: url("/assets/Group5.svg");
+    margin-right: 15px;
+}
+
+/* responsive adjustments ------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .skincare-result-content {        
+        gap: 2px;
+    }
+
+    .skincare-result-content p {
+        width: 422px;
+        height: 110px;
+        line-height: 31px;
+        padding: 19px 12px 25px 25px;
+    }
+
+    .skincare-result-paragraph > p {
+        bottom: 8px;
+        right: 3px;
+        width: 201px;
+        font-size: 18px;
+    }
+
+    .skincare-result-check-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
