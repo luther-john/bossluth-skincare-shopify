@@ -1,0 +1,122 @@
+<section class="skincare-minute-section">
+    <div class="skincare-minute-container">
+        <div class="skincare-minute-content">
+            <p class="skincare-minute-paragraph">
+                Here's how D1 works
+            </p>
+            <img src="{{ 'clock.svg' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
+            <h1 class="skincare-routine-title">{{ section.settings.title |  upcase }}</h1>
+        </div>
+        
+        <div class="skincare-minute-grid">
+            <div class="skincare-cards-1">
+                <img src="{{ 'Bitmap-9.jpg' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
+                <div class="skincare-minute-grid-col1">
+                    <div class="skincare-minute-grid-row1">
+                        <img src="{{ 'cleanser.png' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
+                    </div>
+                    <div class="skincare-minute-grid-row2">
+                        <p>Wash your face with our Bamboo Charcoal Cleanser.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skincare-cards-2">
+                <img src="{{ 'Bitmap-10.jpg' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
+                
+                <div class="skincare-minute-grid-col1">
+                    <div class="skincare-minute-grid-row1">
+                        <img src="{{ 'moisturizer.png' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
+                    </div>
+                    <div class="skincare-minute-grid-row2">
+                        <p>Apply a dime size amount of All Day Moisturizer evenly to your face.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skincare-cards-3">
+                <img src="{{ 'Bitmap-11.jpg' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
+                <div class="skincare-minute-grid-col1">
+                    <div class="skincare-minute-grid-row1">
+                        <img src="{{ 'stick.png' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
+                    </div>
+                    <div class="skincare-minute-grid-row2">
+                        <p>Apply small amount of our Eye Cream under your eyes and around the sides.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{%  stylesheet  %}  
+
+.skincare-minute-section {
+    background-color: var(--skincare-light-bg);
+    color: var(--skincare-dark);
+    padding: 23px 12px 73px 73px;
+    overflow: hidden;
+    align-items: center;
+
+}
+.skincare-minute-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 70px;
+}
+
+.skincare-minute-content > img{
+    width: 7%;
+}
+
+.skincare-minute-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+.skincare-minute-grid-col1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    padding: 33px 159px 12px 0;
+    margin-right: 126px;
+    text-align: justify;
+}
+
+.skincare-minute-grid-row1 > img {
+    width: 50% !important;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+    animation: float 4s ease-in-out infinite;
+}
+
+.skincare-cards-1 > img{
+    width: 75% !important;
+    background-color: transparent;
+}
+
+.skincare-cards-2 > img{
+    width: 75% !important;
+}
+
+.skincare-cards-3 > img{
+    width: 75% !important;
+}
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Skincare Minute",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Heading", "default": "Just 1 Minute a Day" }
+    
+  ],
+  "presets": [
+    { 
+        "name": "Skincare Minute" 
+    }],
+
+}
+{% endschema %}

@@ -62,7 +62,7 @@
 }
 
 .skincare-routine-check-list li::before {
-    content: "✓";
+    content:  url("/assets/Group5.svg");
     margin-right: 15px;
     font-weight: 900;
     color: var(--d1-navy);
