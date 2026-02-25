@@ -1,0 +1,110 @@
+.skincare-minute-section {
+    background-color: var(--skincare-light-bg);
+    color: var(--skincare-dark);
+    padding: 23px 12px 73px 73px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.skincare-minute-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 70px;
+}
+
+.skincare-minute-content > img {
+    width: 7%;
+}
+
+.skincare-small-image-wrapper {
+    position: relative;
+    display: flex;
+    width: 10%;
+}
+
+.skincare-small-image-wrapper > img {
+    position: absolute;
+    top: 61px;
+    left: 12px;
+}
+
+.skincare-small-image-wrapper > p {
+    position: absolute;
+    top: 71px;
+    left: 36px;
+    z-index: 1;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.skincare-minute-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+.skincare-minute-grid-col1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    padding: 33px 159px 12px 0;
+    margin-right: 126px;
+    text-align: justify;
+}
+
+.skincare-minute-grid-row1 > img {
+    width: 50% !important;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+    animation: float 4s ease-in-out infinite;
+}
+
+.skincare-cards-1 > img,
+.skincare-cards-2 > img,
+.skincare-cards-3 > img {
+    width: 75% !important;
+}
+
+.skincare-cards-1 > img {
+    background-color: transparent;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .skincare-minute-section {
+        padding: 23px 12px;
+    }
+
+    .skincare-minute-content,
+    .skincare-minute-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .skincare-minute-grid-col1 {
+        padding: 33px 40px 40px 0;
+        margin-right: 6px;
+    }
+
+    .skincare-minute-content-image-wrapper > img {
+        order: -1;
+    }
+
+    .skincare-small-image-wrapper > p {
+        top: 60px;
+        left: 25px;
+    }
+
+    .skincare-minute-subtitle,
+    .skincare-minute-content-text {
+        padding: 0;
+    }
+
+    .skincare-cards-1 > img,
+    .skincare-cards-2 > img,
+    .skincare-cards-3 > img {
+        width: 100% !important;
+        background-color: transparent;
+    }
+}

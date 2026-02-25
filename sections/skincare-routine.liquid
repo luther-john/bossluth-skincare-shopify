@@ -6,76 +6,110 @@
             Just one minute a day will make your skin look healthier and younger
         </p>
     </div>
-  <div class="skincare-routine-container">  
-    
-    <div class="skincare-routine-content">
-        <div class="skincare-routine-content-text"> 
-            <h1 class="skincare-routine-title">{{ section.settings.title |  upcase }}</h1>
-            <p class="skincare-routine-subtitle">{{ section.settings.subtitle }}</p> 
 
-            <hr/>
+    <div class="skincare-routine-container">
+        <div class="skincare-routine-content">
+            <div class="skincare-routine-content-text">
+                <h1 class="skincare-routine-title">{{ section.settings.title | upcase }}</h1>
+                <p class="skincare-routine-subtitle">{{ section.settings.subtitle }}</p>
 
-            <ul class="skincare-routine-check-list">
-                <li>Lightweight Formulas</li>
-                <li>Easy to use formats</li>
-                <li>Clean Ingredients</li>
-                <li>Everything you need, nothing you don't</li>
-            </ul>
-        </div>     
+                <hr />
 
-        <div class="skincare-routine-content-image-wrapper">
-            <img src="{{ 'Group 17.png' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
-        </div>
-    </div>
-
-    <div class="d1-value-wrapper">
-        <div class="d1-value-container">
-            <div class="d1-value-item">
-            <div class="d1-value-circle">
-                <img src="{{ 'Group6.png' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
-            </div>
-            <div class="d1-value-text">
-                Four-way stretch<br>Performance<br>Fabric
-            </div>
+                <ul class="skincare-routine-check-list">
+                    <li>Lightweight Formulas</li>
+                    <li>Easy to use formats</li>
+                    <li>Clean Ingredients</li>
+                    <li>Everything you need, nothing you don't</li>
+                </ul>
             </div>
 
-            <div class="d1-value-item">
-            <div class="d1-value-circle">
-                <img src="{{ 'Group6-2.png' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
-
-            </div>
-            <div class="d1-value-text">
-                Advanced<br>Moisture-wicking<br>Technology
-            </div>
-            </div>
-
-            <div class="d1-value-item">
-            <div class="d1-value-circle">
-                <img src="{{ 'Group6-1.png' | asset_url }}" width="100" height="100" alt="Skincare Product Image" class="stacked-image">
-
-            </div>
-            <div class="d1-value-text">
-                100% Squat-Proof<br>Tested &<br>Guaranteed
-            </div>
+            <div class="skincare-routine-content-image-wrapper">
+                {% if section.settings.product_image != blank %}
+                    <img src="{{ section.settings.product_image | img_url: '600x' }}" alt="Skincare Product Image" class="stacked-image" width="100" height="100">
+                {% endif %}
             </div>
         </div>
+
+        <div class="d1-value-wrapper">
+            <div class="d1-value-container">
+                <div class="d1-value-item">
+                    <div class="d1-value-circle">
+                        {% if section.settings.icon_1 != blank %}
+                            <img src="{{ section.settings.icon_1 | img_url: '100x100' }}" alt="Value Icon 1" class="stacked-image" width="100" height="100">
+                        {% endif %}
+                    </div>
+                    <div class="d1-value-text">
+                        Four-way stretch<br>Performance<br>Fabric
+                    </div>
+                </div>
+
+                <div class="d1-value-item">
+                    <div class="d1-value-circle">
+                        {% if section.settings.icon_2 != blank %}
+                            <img src="{{ section.settings.icon_2 | img_url: '100x100' }}" alt="Value Icon 2" class="stacked-image" width="100" height="100">
+                        {% endif %}
+                    </div>
+                    <div class="d1-value-text">
+                        Advanced<br>Moisture-wicking<br>Technology
+                    </div>
+                </div>
+
+                <div class="d1-value-item">
+                    <div class="d1-value-circle">
+                        {% if section.settings.icon_3 != blank %}
+                            <img src="{{ section.settings.icon_3 | img_url: '100x100' }}" alt="Value Icon 3" class="stacked-image" width="100" height="100">
+                        {% endif %}
+                    </div>
+                    <div class="d1-value-text">
+                        100% Squat-Proof<br>Tested &<br>Guaranteed
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
- 
 </section>
 
 {% schema %}
 {
-  "name": "Skincare Routine",
-  "settings": [
-    { "type": "text", "id": "title", "label": "Heading", "default": "A Simple Routine that works" },
-    { "type": "text", "id": "subtitle", "label": "Subheading", "default": "Say goodbye to complicated skincare routines. Our men's skincare line is designed for simplicity and effectiveness. With our lightweight formulas, you can achieve healthier and younger-looking skin with minimal effort. Perfect for guys who are new to skincare or just want to keep it simple." },
-    
-  ],
-  "presets": [
-    { 
-        "name": "Skincare Routine" 
-    }],
-
+    "name": "Skincare Routine",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "A Simple Routine that works"
+        },
+        {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subheading",
+            "default": "Say goodbye to complicated skincare routines. Our men's skincare line is designed for simplicity and effectiveness. With our lightweight formulas, you can achieve healthier and younger-looking skin with minimal effort. Perfect for guys who are new to skincare or just want to keep it simple."
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "Product image"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_1",
+            "label": "Value icon 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_2",
+            "label": "Value icon 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_3",
+            "label": "Value icon 3"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Skincare Routine"
+        }
+    ]
 }
 {% endschema %}
