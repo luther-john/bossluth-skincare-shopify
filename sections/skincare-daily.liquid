@@ -1,0 +1,66 @@
+{{ 'skincare-daily.css' | asset_url | stylesheet_tag }}
+
+<section class="skincare-daily-section">
+    <div class="skincare-daily-wrapper">
+        <h1>{{ section.settings.title | upcase }}</h1>
+        <p>{{ section.settings.subtitle }}</p>
+    </div>
+    <div class="skincare-daily-grid">
+            <div class="skincare-daily-cards-1">
+                <img src="{{ 'Bitmap-13.jpg' | asset_url }}" width="100" height="100" alt="Cleanser" class="stacked-image">
+                <div class="skincare-daily-grid-col1">
+                    <div class="skincare-daily-grid-row">
+                        <h1> Look fresher and more confident </h1>
+                        <p>
+                            Prevent and reduce fine lines and wrinkles that develop with dry skin as you age
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="skincare-daily-cards-2">
+                <img src="{{ 'Bitmap-12.jpg' | asset_url }}" width="100" height="100" alt="Moisturizer" class="stacked-image">
+                <div class="skincare-daily-grid-col1">
+                    <div class="skincare-daily-grid-row">
+                        <h1> prevent aging and maintain youthful skin </h1>
+                        <p>
+                            Prevent and reduce fine lines and wrinkles that develop with dry skin as you age
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="skincare-daily-cards-3">
+                <img src="{{ 'Bitmap-14.jpg' | asset_url }}" width="100" height="100" alt="Eye Cream" class="stacked-image">
+                <div class="skincare-daily-grid-col1">
+                    <div class="skincare-daily-grid-row">
+                        <h1> Boost Your Skin Health </h1>
+                        <p>
+                            Prevent and reduce fine lines and wrinkles that develop with dry skin as you age
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+{% schema %}
+{
+  "name": "Skincare Daily",
+  "settings": [
+    { 
+        "type": "text", 
+        "id": "title", 
+        "label": "Heading", 
+        "default": "Daily Benefits, Long-Term Results" 
+    },
+    {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subheading",
+        "default": "We Started D1 because...."
+    },   
+  ],
+  "presets": [
+    { "name": "Skincare Daily" }
+  ]
+}
+{% endschema %}
